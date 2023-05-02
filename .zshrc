@@ -1,3 +1,13 @@
+
+pfetch
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,7 +19,37 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
-ZSH_THEME="michelebologna"
+# Themes
+#ZSH_THEME="michelebologna"
+#ZSH_THEME="3den"
+#ZSH_THEME="adben"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="amuse"
+#ZSH_THEME="awesomepanda"
+#ZSH_THEME="bira"
+#ZSH_THEME="candy-kingdom"
+#ZSH_THEME="candy"
+#ZSH_THEME="clean"
+#ZSH_THEME="cypher"
+#ZSH_THEME="dallas"
+#ZSH_THEME="dstufft"
+#ZSH_THEME="duellj"
+#ZSH_THEME="essembeh"
+#ZSH_THEME="flazz"
+#ZSH_THEME="gentoo"
+#ZSH_THEME="gnzh"
+#ZSH_THEME="kafeitu"
+#ZSH_THEME="murilasso"
+#ZSH_THEME="random"
+#ZSH_THEME="re5et"
+#ZSH_THEME="risto"
+#ZSH_THEME="steeef"
+#ZSH_THEME="strug"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="superjarin"
+#ZSH_THEME="jbergantine"
+#ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,6 +113,9 @@ ZSH_THEME="michelebologna"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent zsh-autosuggestions)
 
+# Adding Auto Completions
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -86,7 +129,7 @@ export LANG=en_US.UTF-8
 # if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
 # else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -105,4 +148,9 @@ export LANG=en_US.UTF-8
 alias vim="nvim"
 alias ls="exa -la --group-directories-first"
 
-neofetch
+# ~/.zshrc
+
+#eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

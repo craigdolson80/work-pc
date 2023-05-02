@@ -11,7 +11,7 @@ from libqtile.widget import Spacer
 mod = "mod4"
 mod1 = "control"
 mod3 = "alt"
-terminal = "alacritty"
+terminal = "kitty"
 mybrowser = "firefox"
 myeditor = "geany"
 mymenu = "/home/craig/.config/rofi/launchers/type-3/launcher.sh"
@@ -195,13 +195,13 @@ groups.append(
 
 layouts = [
      layout.MonadTall(
-                     border_focus = colors[10],
+                     border_focus = colors[3],
                      border_normal = colors[23],
                      border_width = 1,
                      margin = 10
                      ),
      layout.Columns(
-                    border_focus = colors[10],
+                    border_focus = colors[3],
                     border_normal = colors[23],
                     border_width = 1,
                     margin = 10
@@ -209,20 +209,20 @@ layouts = [
      layout.Max(),
     # Try more layouts by unleashing below layouts.
      layout.Stack(
-                  border_focus = colors[10],
+                  border_focus = colors[3],
                   border_normal = colors[23],
                   border_width = 1,
                   margin = 10,
                   num_stacks=2
                   ),
 	 layout.Bsp(
-	            border_focus = colors[10],
+	            border_focus = colors[3],
                 border_normal = colors[23],
                 border_width = 1,
                 margin = 10
 	            ),
      layout.Floating(
-                     border_focus = colors[10],
+                     border_focus = colors[3],
                      border_normal = colors[23],
                      border_width = 0,
                      margin = 10
@@ -254,10 +254,10 @@ screens = [
         top=bar.Bar(
             [            
                  widget.GroupBox(
-                                highlight_color = colors[11],
+                                highlight_color = colors[10],
                                 highlight_method = "line",
                                 #block_highlight_text_color = colors[9],
-                                other_screen_border = colors[8],
+                                other_screen_border = colors[4],
                                 active = colors[26], #group numbers
                                 inactive = colors[21], #group numbers
                                 #hide_unused = True,
@@ -298,7 +298,8 @@ screens = [
                                text = '',
                                background = colors[23],
 						       foreground = colors[9],
-						       fontsize = 14 ,
+						       fontsize = 12,
+                               font = 'Font Awesome 6 Free',
 						       padding = 3
                                ),                                      
                 widget.CheckUpdates(
@@ -306,6 +307,7 @@ screens = [
                        distro = "Arch_checkupdates",
                        display_format = "Updates: {updates} ",
                        foreground = colors[9],
+                       fontsize = 12,
                        colour_have_updates = colors[9],
                        colour_no_updates = colors[9],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e sudo pacman -Syu')},
@@ -322,7 +324,8 @@ screens = [
                                text = '',
                                background = colors[23],
 						       foreground = colors[6],
-						       fontsize = 14,
+						       fontsize = 12,
+                               font = 'Font Awesome 6 Free',
 						       padding = 3
                                ),            
                 widget.CPU(
@@ -342,7 +345,8 @@ screens = [
                                text = '',
                                background = colors[23],
 						       foreground = colors[7],
-						       fontsize = 14,
+						       fontsize = 12,
+                               font = 'Font Awesome 6 Free',
 						       padding = 3
                                ),
                 widget.Memory(
@@ -362,7 +366,8 @@ screens = [
                                text = '',
                                background = colors[23],
 						       foreground = colors[8],
-						       fontsize = 14,
+						       fontsize = 12,
+                               font = 'Font Awesome 6 Free',
 						       padding = 3
                                ),
                 widget.Net(
@@ -382,7 +387,8 @@ screens = [
                                text = '',
                                background = colors[23],
 						       foreground = colors[3],
-						       fontsize = 14,
+						       fontsize = 12,
+                               font = 'Font Awesome 6 Free',
 						       padding = 3
                                ),
                 widget.Clock(
@@ -391,6 +397,7 @@ screens = [
 						     foreground = colors[3],
 						     padding = 5,
                              ),
+  			  		         
             ],
             
             24,
@@ -418,7 +425,7 @@ cursor_warp = False
 
 # Floating Rules
 floating_layout = layout.Floating(
-                     border_focus = colors[10],
+                     border_focus = colors[3],
                      border_normal = colors[23],
                      border_width = 1,
                      margin = 10,
